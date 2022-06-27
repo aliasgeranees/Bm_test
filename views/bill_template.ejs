@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Template</title>
+</head>
+<style>
+    h1 , h3{
+        text-align: center;
+        
+    }
+    .to {
+        margin : 0px 200px;
+    }
+
+    .billdetails {
+        margin : 0px 250px;
+    }
+
+    .sign {
+        margin: 0 1000px;
+    }
+</style>
+<body>
+    <div >
+        <h1>This just a bill template</h1>
+         <h3>Dont worry we can always make it look like areal bill once a format is shown :)</h3>
+        
+    </div>
+    <div class="To">
+        To
+    </div>
+    <div class="billdetails">
+        <ol>
+        <li>  Bill Amount <%= data.BillAmount %> </li>
+        <li>Bill Currency<%= data.Billcurrency %> </li>
+        <li>Bill Names <%= data.BillNames %> </li>
+        <li>Bill Id <%= data.BillId %> </li>
+        <li>Bill Date <%= data.BillDate %> </li>
+        <li>MID <%= data.MID %> </li>
+        <li>Contact <%= data.Contact %> </li>
+        <li>Bill  <%= data.BillDepartment %> </li>
+        <li>Bill Department <%= data.BillDepartment %> </li>
+        </ol>
+    </div>
+    <div class="sign">
+        Yours Faithfully
+    </div>
+</body>
+</html>

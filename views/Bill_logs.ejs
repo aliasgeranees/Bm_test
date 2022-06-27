@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Logs</title>
+</head>
+<style>
+        h1 {
+            text-align: center;
+            background-color: #2bcae2;
+            border-radius: 15px;
+            margin-inline: 30%;
+        }
+
+        table {
+            display: flex;
+            justify-content: center
+        }
+
+        .content-table {
+        border-collapse: collapse;
+        margin: 25px 15%;
+        font-size: 0.9em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .TableHead {
+        background-color: #26d751;
+        color: #ffffff;
+        text-align: center;
+        font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td {
+        padding: 13px 20px;
+    }
+</style>
+<body>
+    <h1> These are Bill LOGS! </h1>
+    <table class="content-table">
+        <tr class="TableHead">
+            <th> Serial Number </th>
+            <th>Bill Id</th>
+            <th>Bill Date</th>
+            <th>Bill Department</th>
+            <th>Bill Names</th>
+            <th>MID</th>
+            <th>Contact</th>
+            <th>Bill Bank</th>
+            <th>Bill Currency </th>
+            <th>Bill Amount</th>
+        </tr>
+
+        <% for(var i = Count-1 , j = 1; i >= 0 ;  i--, j++) { %>
+        <tr>
+        <td><%=  j          %></td>
+        <td><%=  BillId[i]  %> </td>
+        <td><%=  BillDate[i]  %> </td>
+        <td><%=  BillDepartment[i]  %> </td>
+        <td><%=  BillNames[i]  %> </td>
+        <td><%=  MID[i]  %></td>
+        <td><%=  Contact[i] %> </td>
+        <td><%=  BillBank[i] %> </td>
+        <td><%= BillCurrency[i] %> </td>
+        <td><%= BillAmount[i] %> </td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>

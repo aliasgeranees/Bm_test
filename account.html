@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>BM_Billing</title>
+    <style>
+        div {
+            margin: 30px;
+        }
+        
+        .navbar {
+            background-color: rgb(19, 18, 18);
+            border-radius: 20px;
+        }
+
+        .options {
+            display: flex;
+            list-style: none;
+        }
+
+        .options li {
+            margin: 15px;
+            
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: rgb(240, 242, 240);
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #2bcae2;
+            border-radius: 15px;
+            margin-inline: 30%;
+        }
+
+        form {
+            display: block;
+            margin-inline: 30%;
+        }
+        form div {
+            color: #148f02;
+        }
+
+        form label{
+            margin : 5px;
+        }
+        .submit_btn input{
+            margin-block: 7px;
+            margin-inline: 66px;
+            padding-block: 5px ;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="navbar">
+            <ul class="options">
+                <li><a href="/">New Account</a></li>
+                <li><a href="bill">Bill Details</a></li>
+                <li><a href="AccountLogs">Account Logs</a></li>
+                <li><a href="BillLogs">Bill Logs</a></li>
+            </ul>
+        </div>
+        <h1>Enter the details of the account</h1>
+        <form name="AccountForm" method="POST" action="/account_submit">
+            <div>
+                <label for="AccountName"> Account Name </label>
+                <input type="text" name="AccountName" id="AccountName"> 
+            </div>
+            <div>
+                <label for="AccountNumber"> Account Number </label>
+                <input type="text" name="AccountNumber" id="AccountNumber"> 
+            </div>
+            <div>
+                <label for="AccountBank">Bank</label>
+                <input type="text" list="BankList" name="AccountBank" id="AccountBank">
+                <datalist id="BankList">
+                    <option value="HDFC"></option>
+                    <option value="RBI"></option>
+                    <option value="BOI"></option>
+                </datalist>
+            </div>
+            <div>
+                <label for="Balance"> Balance </label>
+                <input type="number" name="Balance" id="Balance">
+            </div>
+            <div class="submit_btn">
+                <input type="submit" name="AcntSubmit" >
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+</body>
+</html>

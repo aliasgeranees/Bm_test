@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill_entry</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+        .navbar {
+            background-color: rgb(17, 16, 16);
+            border-radius: 20px;
+        }
+
+        .options {
+            display: flex;
+            list-style: none;
+        }
+
+        .options li {
+            margin: 15px;
+            
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: rgb(235, 238, 235);
+        }
+        h1 {
+            text-align: center;
+            background-color: #47a9d5;
+            color : rgb(17, 17, 17);
+            border-radius: 15px;
+            margin-inline: 30%;
+        }
+
+        form {
+            display: block;
+            margin-inline: 30%;
+        }
+        form div {
+            color: #3524f0;
+        }
+
+        form label{
+            margin : 5px;
+        }
+        .submit_reset input{
+            margin-block: 7px;
+            margin-inline: 66px;
+            padding-block: 5px ;
+        }
+
+        #Names {
+            margin: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul class="options">
+                <li><a href="/">New Account</a></li>
+                <li><a href="/bill">Bill Details</a></li>
+                <li><a href="AccountLogs">Account Logs</a></li>
+                <li><a href="BillLogs">Bill Logs</a></li>
+        </ul>
+    </div>
+    <h1>
+        Enter the bill details below
+    </h1>
+    <form name="bill-form" method="POST" action="/bill_template">
+
+    <div>
+        <label for="AcntName"> Name </label>
+        <input type="text" name="AcntName" id="AcntName">
+        <input type="button" value="Add Account Name" id="AddName">          
+        <div id="Names">
+        </div>
+    </div>
+
+    <div>
+        <label for="BillDate"> Date </label>
+        <input type="date" name="BillDate" id="BillDate">
+    </div>
+
+    <div>
+        <label for="DeptName"> Department Name </label>
+        <input type="text" name="DeptName" id="DeptName">
+    </div>
+
+    <div>
+        <label for="M_ID"> MID :  </label>
+        <input type="text" name="M_ID" id="M_ID">
+    </div>
+
+    <div>
+        <label for="ContactNumber"> Contact Number  </label>
+        <input type="number" name="ContactNumber" id="ContactNumber">
+    </div>
+
+    <div>
+        <label for="BillBank">Bank</label>
+        <input type="text" list="BankList" name="BillBank" id="BillBank">
+        <datalist id="BankList">
+            <option value="HDFC"></option>
+            <option value="RBI"></option>
+            <option value="BOI"></option>
+        </datalist>
+    </div>
+
+    <div>
+        <label for="currency">Currency</label>
+        <input type="text" list="currencyList" name="currency" id="currency">
+        <datalist id="currencyList">
+            <option value="Rupees"></option>
+            <option value="Dollar"></option>
+            <option value="Shilling"></option>
+        </datalist>
+    </div>
+
+    <div class="submit_reset">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+
+    </form>
+</body>
+<script> 
+    document.getElementById("AddName").addEventListener("click" , () => {
+    let ip = document.createElement("input");
+    ip.name = "AcntName";
+    ip.style.margin = '5px'
+    ip.style.display = 'block';
+    let name = document.getElementById("Names");
+    name.appendChild(ip); 
+});
+
+</script>
+</html>
